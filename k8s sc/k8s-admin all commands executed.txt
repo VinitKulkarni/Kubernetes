@@ -1,0 +1,1114 @@
+1  sudo apt update
+    2  curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.27.5/2023-09-14/bin/linux/amd64/kubectl
+    3  chmod +x ./kubectl
+    4  mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
+    5  kubectl version --short --client
+    6  curl -sLO "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$PLATFORM.tar.gz"
+    7  tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz
+    8  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+    9  sudo mv /tmp/eksctl /usr/local/bin
+   10  eksctl version
+   11  clear
+   12  aws sts get-caller-identity
+   13  sudo apt install awscli
+   14  aws sts get-caller-identity
+   15  eksctl create cluster --name Test-cluster --region ap-south-1
+   16  clear
+   17  eksctl create nodegroup   --cluster Test-cluster   --region ap-south-1   --name Test-mng   --node-ami-family Ubuntu2004   --node-type t2.small   --nodes 2   --nodes-min 2   --nodes-max 3   --ssh-access   --ssh-public-key TestVM1Key
+   18  eksctl create nodegroup   --cluster Test-cluster   --region ap-south-1   --name Test-mng   --node-ami-family Ubuntu2004   --node-type t2.small   --nodes 2   --nodes-min 2   --nodes-max 3   --ssh-access   --ssh-public-key TestVM1
+   19  history
+   20  cd /usr/local/bin
+   21  ls -l
+   22  cd ..
+   23  clear
+   24  kubectl cluster-info
+   25  kubectl config get-contexts
+   26  kubectl get namespace
+   27  kubectl get nodes
+   28  kubectl describe nodes
+   29  cp /etc/kubernetes/admin.conf ~/.kube/config
+   30  history
+   31  cd /home/lib
+   32  cd home/
+   33  ls -l
+   34  sudo su
+   35  ls -l
+   36  history
+   37  cd /usr/local/bin
+   38  ls -l
+   39  cd ..
+   40  ls -l
+   41  cd ..
+   42  cd /home/bin
+   43  sudo su
+   44  clear
+   45  kubectl get nodes
+   46  kubectl cluster-info
+   47  kubectl version
+   48  tty
+   49  cd /etc/security/
+   50  ls -lrt
+   51  cat access.conf | less
+   52  cat pam_env.conf
+   53  ls -lrt
+   54  cat limits.conf
+   55  history
+   56  aws sts get-caller-identity
+   57  kubectl get pods
+   58  kubectl get nodes
+   59  cd
+   60  ls -lrt
+   61  cd .kube/
+   62  ls -lrt
+   63  vim config
+   64  kubectl get nodes
+   65  vim config
+   66  aws sts get-caller-identity
+   67  kubectl get nodes
+   68  vim config
+   69  kubectl get nodes
+   70  vim config
+   71  kubectl get nodes
+   72  vim config
+   73  sudo su
+   74  kubectl get nodes
+   75  history
+   76  cd ..
+   77  pwd
+   78  kubectl get namespaces
+   79  kubectl get nodes
+   80  kubectl cluster-info
+   81  ls
+   82  clear
+   83  ls -l
+   84  pwd
+   85  mkdir images
+   86  docker
+   87  clear
+   88  ls
+   89  cd images/
+   90  ls -l
+   91  clear
+   92  vi nginx-deployment.yml
+   93  ls -l
+   94  mv nginx-deployment.yml nginx-deployment.yaml
+   95  ls -l
+   96  clear
+   97  kubectl apply -f nginx-deployment.yaml
+   98  kubectl get deployments
+   99  kubectl get nodes
+  100  kubectl logs deployment.apps/nginx-deployment
+  101  kubectl get pods
+  102  kubectl describe pods
+  103  top
+  104  ls -l
+  105  docker images
+  106  sudo apt install docker.io
+  107  docker images
+  108  sudo usermod -aG docker ubuntu
+  109  logout
+  110  kubectl get pods
+  111  ls -l
+  112  cd images/
+  113  ls -l
+  114  vi database-deployment.yaml
+  115  docker images
+  116  kubectl get nodes
+  117  kubectl get pods
+  118  kubectl get deployments
+  119  exit
+  120  kubectl get nodes
+  121  kubectl get pods
+  122  kubectl get deployment
+  123  kubectl get nodes
+  124  kubectl get pods
+  125  kubectl get deployments
+  126  ls -l
+  127  cd images/
+  128  ls -l
+  129  vi database-deployment.yaml
+  130  kubectl get deployments
+  131  kubectl get nodes
+  132  kubectl get pods
+  133  ls -l
+  134  kubectl apply -f database-deployment.yaml
+  135  kubectl get nodes
+  136  kubectl get pods
+  137  kubectl get deployment
+  138  kubectl get all --all-namespaces
+  139  vi database-deployment.yaml
+  140  vi backend-deployment.yaml
+  141  vi database-deployment.yaml
+  142  vi backend-deployment.yaml
+  143  kubectl -f backend-deployment.yaml
+  144  kubectl apply -f backend-deployment.yaml
+  145  kubectl get nodes
+  146  kubectl get pods
+  147  kubectl get deployments
+  148  kubectl get services
+  149  kubectl get pods
+  150  kubectl get containers
+  151  kubectl describe pods backend-deployment-7686b7759c-dlp6z
+  152  kubectl get pods
+  153  kubectl exec -it backend-deployment-7686b7759c-dlp6z /bin/bash
+  154  curl http://localhost:8000
+  155  ls -l
+  156  kubectl exec -it backend-deployment-7686b7759c-dlp6z /bin/bash
+  157  kubectl get pods
+  158  kubectl exec -it backend-deployment-7686b7759c-dlp6z /bin/bash
+  159  kubectl get pods
+  160  vi backend-deployment.yaml
+  161  vi database-deployment.yaml
+  162  kubectl apply -f database-deployment.yaml
+  163  kubectl apply -f backend-deployment.yaml
+  164  kubectl get nodes
+  165  kubectl get pods
+  166  clear
+  167  kubectl get pods
+  168  kubectl kubectl exec -it backend-deployment-7686b7759c-sqf2w /bin/bash
+  169  kubectl exec -it backend-deployment-7686b7759c-sqf2w /bin/bash
+  170  kubectl get pods
+  171  ls -l
+  172  vi backend-deployment.yaml
+  173  kubectl get pods
+  174  kubectl exec -it backend-deployment-7686b7759c-sqf2w /bin/bash
+  175  Kubectl describe pod backend-deployment-7686b7759c-sqf2w
+  176  kubectl describe pod backend-deployment-7686b7759c-sqf2w
+  177  exit
+  178  history
+  179  kubectl get nodes
+  180  kubectl get pods
+  181  kubectl get deployments
+  182  eksctl create nodegroup --cluster Test-cluster --region ap-south-1 --node-type t2.medium --nodes 1 --nodes-min 1 --nodes-max 1 --ssh-access --ssh-public-key TestVM1
+  183  history
+  184  eksctl create nodegroup
+  185  --cluster Test-cluster \
+  186  --region ap-south-1 \
+  187  --name Test-mng --node-ami-family Ubuntu2004 \
+  188  --node-type t2.medium --nodes 1 \
+  189  --nodes-min 1 \
+  190  --nodes-max 1 \
+  191  --ssh-access \
+  192  --ssh-public-key TestVM1
+  193  eksctl create nodegroup --cluster Test-cluster --region ap-south-1 --name Test-mng --node-ami-family Ubuntu2004 --node-type t2.medium --nodes 1 --nodes-min 1 --nodes-max 1 --ssh-access --ssh-public-key TestVM1
+  194  eksctl create nodegroup   --cluster Test-cluster   --region ap-south-1   --name Test-mng   --node-ami-family Ubuntu2004   --node-type t2.medium   --nodes 2   --nodes-min 2   --nodes-max 2   --ssh-access   --ssh-public-key TestVM1
+  195  ls -l
+  196  cd images/
+  197  ls -l
+  198  vi backend-deployment.yaml
+  199  kubectl get nodes
+  200  kubectl get pods
+  201  kubectl get deployments
+  202  kubectl exec -it backend-deployment-7686b7759c-jzstl /bin/bash
+  203  kubectl get pods
+  204  ls -l
+  205  vi backend-deployment.yaml
+  206  kubectl apply -f backend-deployment.yaml
+  207  kubectl get pods
+  208  kubectl exec -it backend-deployment-7686b7759c-jzstl /bin/bash
+  209  kubectl get pods
+  210  kubectl exec -it backend-deployment-7686b7759c-jzstl /bin/bash
+  211  kubectl describe pod backend-deployment-7686b7759c-jzstl
+  212  kubectl get pods
+  213  vi backend-deployment.yaml
+  214  kubectl apply -f backend-deployment.yaml
+  215  vi backend-deployment.yaml
+  216  kubectl apply -f backend-deployment.yaml
+  217  vi backend-deployment.yaml
+  218  kubectl apply -f backend-deployment.yaml
+  219  kubectl get pods
+  220  kubectl exec -it backend-deployment-6b6bfdd4f6-skr4g /bin/bash
+  221  vi backend-deployment.yaml
+  222  kubectl apply -f backend-deployment.yaml
+  223  vi backend-deployment.yaml
+  224  kubectl apply -f backend-deployment.yaml
+  225  vi backend-deployment.yaml
+  226  kubectl apply -f backend-deployment.yaml
+  227  kubectl get namespace
+  228  kubectl get deployments
+  229  kubectl delete deployment backend-deployment
+  230  kubectl get deployments
+  231  kubectl get pods
+  232  kubectl get nodes
+  233  kubectl apply -f backend-deployment.yaml
+  234  vi backend-deployment.yaml
+  235  kubectl apply -f backend-deployment.yaml
+  236  kubectl get pods
+  237  kubectl exec -it backend-deployment-6b6bfdd4f6-g727v /bin/bash
+  238  netstat -tulpn | grep LISTEN | grep :8000
+  239  sudo apt install net-tools
+  240  netstat -tulpn | grep LISTEN | grep :8000
+  241  netstat -tulpn | grep LISTEN
+  242  netstat -tulpn
+  243  kubectl exec -it backend-deployment-6b6bfdd4f6-g727v /bin/bash
+  244  netstat -tulpn
+  245  kubectl get pods
+  246  kubectl pod logs backend-deployment-6b6bfdd4f6-g727v
+  247  kubectl pods logs backend-deployment-6b6bfdd4f6-g727v
+  248  kubectl logs backend-deployment-6b6bfdd4f6-g727v
+  249  ls -l
+  250  vi database-deployment.yaml
+  251  kubectl get pods
+  252  LS -LR
+  253  ls -lrt
+  254  cp backend-deployment.yaml busybox.yaml
+  255  vim busybox.yaml
+  256  kubectl apply -f busybox.yaml
+  257  kubectl get pods
+  258  kubectl logs busybox-deployment-8677db5bcb-v5k5b
+  259  vim busybox.yaml
+  260  kubectl apply -f busybox.yaml
+  261  kubectl get pods
+  262  kubectl logs busybox-deployment-7f75886f65-pg5pf
+  263  kubectl describe pods busybox-deployment-7f75886f65-pg5pf
+  264  vim busybox.yaml
+  265  kubectl apply -f busybox.yaml
+  266  kubectl get pods
+  267  kubectl describe pods busybox-deployment-56f8cb768-642xk
+  268  vim busybox.yaml
+  269  kubectl apply -f busybox.yaml
+  270  kubectl get pods
+  271  kubectl logs busybox-deployment-5fb6cb8dcc-zckbx
+  272  kubectl exec -it busybox-deployment-5fb6cb8dcc-zckbx /bin/bash
+  273  kubectl exec -it busybox-deployment-5fb6cb8dcc-zckbx /bin/sh
+  274  kubectl delete -f busybox.yaml
+  275  vim busybox.yaml
+  276  kubectl apply -f busybox.yaml
+  277  kubectl get pods
+  278  kubectl exec -it busybox-deployment-5bcc6c8775-94nk4 /bin/bash
+  279  kubectl get pods
+  280  kubectl exec -it busybox-deployment-5bcc6c8775-94nk4 /bin/bash
+  281  kubectl get pods
+  282  kubectl logs database-deployment-56b6cb7668-dn7xv
+  283  clear
+  284  kubectl get pods
+  285  kubectl get nodes
+  286  kubectl exec -it busybox-deployment-5bcc6c8775-94nk4 /bin/bash
+  287  clear
+  288  ls -l
+  289  vi backend-deployment.yaml
+  290  vi database-deployment.yaml
+  291  kubectl apply -f database-deployment.yaml
+  292  kubectl apply -f backend-deployment.yaml
+  293  kubectl get nodes
+  294  kubectl get pods
+  295  kubectl exec -it backend-deployment-6b6bfdd4f6-g727v /bin/bash
+  296  kubectl get pods
+  297  kubectl apply -f backend-deployment.yaml
+  298  kubectl get pods
+  299  kubectl apply -f backend-deployment.yaml
+  300  kubectl get pods
+  301  kubectl delete deployment backend-deployment-6b6bfdd4f6-g727v
+  302  kubectl get deployment
+  303  kubectl delete deployment backend-deployment
+  304  kubectl get pods
+  305  kubectl apply -f backend-deployment.yaml
+  306  kubectl get pods
+  307  kubectl exec -it backend-deployment-6b6bfdd4f6-rv92b /bin/bash
+  308  kubectl get pods
+  309  ls -l
+  310  vi backend-deployment.yaml
+  311  vi database-deployment.yaml
+  312  kubectl get pods
+  313  kubectl exec -it backend-deployment-6b6bfdd4f6-rv92b /bin/bash
+  314  kubectl get pods
+  315  vi backend-deployment.yaml
+  316  clear
+  317  ls -l
+  318  mysql --version
+  319  kubectl get pods
+  320  kubectl describe backend-deployment-6b6bfdd4f6-rv92b
+  321  kubectl describe pod backend-deployment-6b6bfdd4f6-rv92b
+  322  kubectl exec -it backend-deployment-6b6bfdd4f6-rv92b -c //dc37b2bf8fa0716c68b17dce98449fec0e670fdbe4e607cebf75854534b74113
+  323  kubectl exec -it backend-deployment-6b6bfdd4f6-rv92b -c //dc37b2bf8fa0716c68b17dce98449fec0e670fdbe4e607cebf75854534b74113 /bash
+  324  ls -l
+  325  kubectl get pods
+  326  kubectl get nodes
+  327  kubectl get pods
+  328  kubectl exec -it backend-deployment-6b6bfdd4f6-jxxhs /bin/bash
+  329  docker ps
+  330  docker ps -a
+  331  kubectl get pods
+  332  kubectl exec -it backend-deployment.yaml
+  333  kubectl exec -it backend-deployment.yaml /bin/bash
+  334  kubectl get pods
+  335  kubectl exec -it backend-deployment-6b6bfdd4f6-jxxhs /bin/bash
+  336  kubectl get pods
+  337  kubectl apply -f backend-deployment.yaml
+  338  kubectl get pods
+  339  kubectl exec -it backend-deployment-6b6bfdd4f6-jxxhs /bin/bash
+  340  kubectl get pods
+  341  vi backend-deployment.yaml
+  342  kubectl apply -f backend-deployment.yaml
+  343  kubectl get pods
+  344  kubectl exec -it backend-deployment-6f7cf48d94-8rwrz /bin/bash
+  345  kubectl get pods
+  346  kubectl exec -it backend-deployment-6f7cf48d94-8rwrz /bin/bash
+  347  docker images
+  348  kubectl logs backend-deployment-6f7cf48d94-8rwrz
+  349  kubectl get pods
+  350  kubectl logs backend-deployment-6f7cf48d94-8rwrz
+  351  kubectl get pods
+  352  kubectl exec -it backend-deployment-6f7cf48d94-8rwrz /bin/bash
+  353  kubectl get pods
+  354  vi database-deployment.yaml
+  355  kubectl get pods
+  356  docker images
+  357  clear
+  358  free -h
+  359  docker images
+  360  docker run -d vinitkulkarni/database-image
+  361  docker run -d vinitkulkarni/backend-image
+  362  docker ps -a
+  363  docker exec -it f7c61cebdb36 /bin/bash
+  364  curl http://localhost:8000
+  365  docker exec -it f7c61cebdb36 /bin/bash
+  366  docker ps -a
+  367  docker start f7c61cebdb36
+  368  docker ps
+  369  docker exec -it f7c61cebdb36 /bin/bash
+  370  docker exec -it 42bc439f7d3f /bin/bash
+  371  docker images
+  372  kubectl pods
+  373  kubectl get pods
+  374  kubectl get nodes
+  375  clear
+  376  docker images
+  377  docker ps -a
+  378  clear
+  379  docker images
+  380  docker ps -a
+  381  docker stop 42bc439f7d3f
+  382  docker rm f7c61cebdb36
+  383  docker rm 42bc439f7d3f
+  384  docker ps -a
+  385  docker images
+  386  clear
+  387  docker images
+  388  docker run -d vinitkulkarni/database-image
+  389  docker run -d vinitkulkarni/backend-image
+  390  docker ps -a
+  391  docker exec -it c7fd44971f88 /bin/bash
+  392  exit
+  393  docker images
+  394  docker ps -a
+  395  docker exec -it c7fd44971f88 /bin/bash
+  396  docker ps -a
+  397  docker start c7fd44971f88
+  398  docker ps -a
+  399  docker exec -it c7fd44971f88 /bin/bash
+  400  docker images
+  401  docker ps -a
+  402  docker stop c7fd44971f88
+  403  docker stop 65b30bd3eb22
+  404  docker ps -a
+  405  docker rm c7fd44971f88
+  406  docker rm 65b30bd3eb22
+  407  docker images
+  408  docker ps -a
+  409  clear
+  410  kubectl get pods
+  411  kubectl exec -it backend-deployment-6f7cf48d94-8rwrz /bin/bash
+  412  kubectl get pods
+  413  kubectl get pods -o wide
+  414  ls -l
+  415  cd images/
+  416  ls -l
+  417  rm busybox.yaml
+  418  ls -l
+  419  kubectl get pods
+  420  kubectl get deployment
+  421  kubectl delete deployment busybox-deployment
+  422  kubectl get pods
+  423  ls -l
+  424  vi frontend-deployment.yml
+  425  kubectl describe pod backend-deployment-6f7cf48d94-8rwrz
+  426  kubectl log backend-deployment-6f7cf48d94-8rwrz
+  427  kubectl logs backend-deployment-6f7cf48d94-8rwrz
+  428  clear
+  429  ls -l
+  430  vi frontend-deployment.yml
+  431  vi backend-deployment.yaml
+  432  vi frontend-deployment.yml
+  433  vi backend-deployment.yaml
+  434  vi frontend-deployment.yml
+  435  kubectl get pods
+  436  vi frontend-deployment.yml
+  437  kubectl get deployment
+  438  vi frontend-deployment.yml
+  439  mv frontend-deployment.yml frontend-deployment.yaml
+  440  ls -l
+  441  kubectl apply -f frontend-deployment.yaml
+  442  vi frontend-deployment.yml
+  443  vi frontend-deployment.yaml
+  444  kubectl apply -f frontend-deployment.yaml
+  445  vi frontend-deployment.yaml
+  446  kubectl apply -f frontend-deployment.yaml
+  447  vi frontend-deployment.yaml
+  448  vi backend-deployment.yaml
+  449  vi frontend-deployment.yaml
+  450  kubectl apply -f frontend-deployment.yaml
+  451  vi frontend-deployment.yaml
+  452  kubectl apply -f frontend-deployment.yaml
+  453  exit
+  454  cd images/
+  455  ls -l
+  456  kubectl get pods
+  457  kubectl get nodes
+  458  kubectl get pods
+  459  vi frontend-deployment.yaml
+  460  kubectl get pods
+  461  history
+  462  kubectl get pods -o wide
+  463  clear
+  464  kubectl get pods
+  465  docker images
+  466  docker run vinitkulkarni/database-image
+  467  cd images/
+  468  ls -l
+  469  kubectl get pods
+  470  kubectl exec -it backend-deployment-5675c57599-h9b7q -- /bin/bash
+  471  vi backend-deployment.yaml
+  472  kubectl get pods
+  473  kubectl describe pods backend-deployment-5675c57599-h9b7q
+  474  kubectl logs  backend-deployment-5675c57599-h9b7q
+  475  kubectl get pods
+  476  docker ps -a
+  477  docker exec -it 302e591a08f9 /bin/bash
+  478  ls -l
+  479  vi database-deployment.yaml
+  480  ls -l
+  481  kubectl get deployments
+  482  kubectl delete deployment backend-deployment
+  483  kubectl delete deployment database-deployment
+  484  kubectl get deployments
+  485  kubectl get pods
+  486  kubectl get nodes
+  487  exit
+  488  cd images
+  489  ls
+  490  docker ps -a
+  491  docker images
+  492  docker run -d vinitkulkarni/backend-image
+  493  docker ps -a
+  494  clear
+  495  docker images
+  496  docker ps
+  497  docker exec -it 9df7a32af707 /bin/bash
+  498  docker ps -a
+  499  docker stop 9df7a32af707
+  500  docker stop 2098ae775e25
+  501  docker rm 2098ae775e25
+  502  docker rm 9df7a32af707
+  503  docker ps -a
+  504  clear
+  505  kubectl get nodes
+  506  kubectl get pods
+  507  docker logs frontend-deployment-5bd6f65bcb-7jf58
+  508  docker describe frontend-deployment-5bd6f65bcb-7jf58
+  509  clear
+  510  kubectl get pods
+  511  kubectl describe pod backend-deployment-6f7cf48d94-n4qlk
+  512  kubectl get pods
+  513  kubectl describe pod frontend-deployment-5bd6f65bcb-7jf58
+  514  vi frontend-deployment.yaml
+  515  vi backend-deployment.yaml
+  516  vi frontend-deployment.yaml
+  517  kubectl get pods
+  518  kubectl get deployment
+  519  vi database-deployment.yaml
+  520  vi backend-deployment.yaml
+  521  vi frontend-deployment.yaml
+  522  kubectl apply -f backend-deployment.yaml
+  523  kubectl apply -f frontend-deployment.yaml
+  524  kubectl get pods
+  525  kubectl get nodes
+  526  kubectl get pods
+  527  kubectl exec -it backend-deployment-5675c57599-d6rw2 /bin/bash
+  528  kubectl get pods
+  529  vi frontend-deployment.yaml
+  530  kubectl get pods
+  531  kubectl logs frontend-deployment-8668b64597-8krjc
+  532  kubectl get pods
+  533  vi frontend-deployment.yaml
+  534  cd images/
+  535  ls -l
+  536  kubectl get pods
+  537  kubectl exec -it backend-deployment-5675c57599-d6rw2 /bin/bash
+  538  kubectl get pods
+  539  kubectl logs frontend-deployment-8668b64597-8krjc
+  540  vi frontend-deployment.yaml
+  541  vi backend-deployment.yaml
+  542  vi frontend-deployment.yaml
+  543  kubectl apply -f frontend-deployment.yaml
+  544  kubectl get pods
+  545  kubectl logs backend-deployment-5675c57599-d6rw2
+  546  kubectl describe pod backend-deployment-5675c57599-d6rw2
+  547  docker images
+  548  docker run -d vinitkulkarni/database-image
+  549  docker run -d vinitkulkarni/backend-image
+  550  docker ps
+  551  docker exec -it vinitkulkarni/backend-image /bin/bash
+  552  docker ps
+  553  docker exec -it 302e591a08f9 /bin/bash
+  554  clear
+  555  ls -l
+  556  kubectl delete deployment backend-deployment.yaml
+  557  kubectl delete deployment backend-deployment
+  558  kubectl get deployments
+  559  kubectl delete deployment frontend-deployment
+  560  kubectl get deployments
+  561  vi backend-deployment.yaml
+  562  kubectl apply -f backend-deployment.yaml
+  563  kubectl get pods
+  564  kubectl get deployments
+  565  kubectl get pods
+  566  kubectl exec -it backend-deployment-5675c57599-h9b7q -- /bin/bash
+  567  kubectl get pods
+  568  kubectl exec -it backend-deployment-5675c57599-h9b7q -- /bin/bash
+  569  kubectl get pods
+  570  kubectl exec -it backend-deployment-5675c57599-h9b7q -- /bin/bash
+  571  kubectl get pods
+  572  kubectl exec -it backend-deployment-5675c57599-h9b7q -- /bin/bash
+  573  cd images/
+  574  ls -l
+  575  kubectl get pods
+  576  kubectl get nodes
+  577  kubectl get pods
+  578  kubectl get nodes
+  579  kubectl get deployments
+  580  kubectl get nodes
+  581  kubectl get deployments
+  582  kubectl get pods
+  583  ls -l
+  584  kubectl apply -f database-deployment.yaml
+  585  kubectl get pods
+  586  kubectl apply -f backend-deployment.yaml
+  587  kubectl get pods
+  588  kubectl apply -f backend-deployment.yaml
+  589  kubectl get pods
+  590  kubectl exec -it backend-deployment-5675c57599-pct9m /bin/bash
+  591  kubectl get pods
+  592  vi database-deployment.yaml
+  593  vi backend-deployment.yaml
+  594  kubectl logs backend-deployment-5675c57599-pct9m
+  595  kubectl get pods
+  596  kubectl logs backend-deployment-5675c57599-pct9m
+  597  kubectl get pods
+  598  kubectl logs backend-deployment-5675c57599-pct9m -f
+  599  dig database-1.ccloafkmlils.ap-south-1.rds.amazonaws.com
+  600  kubectl get pods
+  601  kubectl describe pods backend-deployment-5675c57599-pct9m
+  602  kubectl get pods
+  603  kubectl logs backend-deployment-5675c57599-pct9m -f
+  604  ls -lrt
+  605  docker ps
+  606  docker ps -a
+  607  ls -lrt
+  608  cd ..
+  609  ls -lrt
+  610  clear
+  611  sudo apt update
+  612  sudo apt install docker.io -y
+  613  docker images
+  614  ls -l
+  615  cd images/
+  616  ls -l
+  617  kubectl get pods
+  618  kubectl get nodes
+  619  kubectl exec -it backend-deployment-5675c57599-pct9m /bin/bash
+  620  docker --version
+  621  exit
+  622  cd images/
+  623  kubectl get pods
+  624  vi frontend-deployment.yaml
+  625  vi database-deployment.yaml
+  626  vi backend-deployment.yaml
+  627  vi frontend-deployment.yaml
+  628  curl myapppp.tk
+  629  curl www.myapppp.tk
+  630  ls
+  631  cd ..
+  632  ls -l
+  633  cd images/
+  634  ls -l
+  635  vi frontend-deployment.yaml
+  636  ls -l
+  637  vi ingress.yaml
+  638  ls -l
+  639  vi ingress.yaml
+  640  kubectl apply -f ingress.yaml
+  641  vi ingress.yaml
+  642  kubectl apply -f ingress.yaml
+  643  vi ingress.yaml
+  644  kubectl apply -f ingress.yaml
+  645  vi ingress.yaml
+  646  kubectl apply -f ingress.yaml
+  647  vi ingress.yaml
+  648  kubectl apply -f ingress.yaml
+  649  vi ingress.yaml
+  650  kubectl apply -f ingress.yaml
+  651  vi ingress.yaml
+  652  kubectl apply -f ingress.yaml
+  653*
+  654  kubectl get ingress
+  655  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
+  656  kubectl get pods
+  657  vi ingress.yaml
+  658  kubectl get pods
+  659  kubectl apply -f ingress.yaml
+  660  kubectl get ingress
+  661  curl www.myapppp.tk
+  662  ping www.myapppp.tk
+  663  kubectl get pods
+  664  vi ingress.yaml
+  665  vi frontend-deployment.yaml
+  666  kubectl get pods
+  667  vi ingress.yaml
+  668  kubectl get ingress
+  669  kubectl get pods -o wide
+  670  kubectl get po -n ingress-nginx  -o wide
+  671  kubectl describe services gateway-service | grep LoadBalancer
+  672  kubectl get pods
+  673  kubectl get nodes
+  674  kubectl exec -it frontend-deployment-8668b64597-7vpv6 /bin/bash
+  675  curl www.myapppp.tk
+  676  clear
+  677  history
+  678  kubectl get ingress
+  679  kubectl get po -n ingress-nginx -o wide
+  680  vi frontend-deployment.yaml
+  681  vi ingress.yaml
+  682  kubectl get services ingress-nginx-controller --namespace=ingress-nginx
+  683  history
+  684  cd
+  685  wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
+  686  vim deploy.yaml
+  687  kubectl get pods
+  688  kubectl get ns
+  689  kubectl get pods -n ingress-nginx
+  690  kubectl exec -it ingress-nginx-controller-56bc5849d9-jrk49 /bin/bash -n ingress-nginx
+  691  kubectl get nodes
+  692  kubectl get pods
+  693  docker ps -a
+  694  docker rm 302e591a08f9
+  695  docker rm 871031432dbf
+  696  docker ps -a
+  697  clear
+  698  history
+  699  kubectl get pods
+  700  kubectl get deployments
+  701  kubectl get services
+  702  exit
+  703  kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+  704  kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://www.myapppp.tk/; done"
+  705  exit
+  706  kubectl run -i --tty load-generator --rm 00image=busy:1.28 --restart=never --/bin/bash -c "while sleep 0.01; do wget -q -O- http://www.myapppp.tk; done"
+  707  kubectl run -i --tty load-generator --rm --image=busy:1.28 --restart=never --/bin/bash -c "while sleep 0.01; do wget -q -O- http://www.myapppp.tk; done"
+  708  kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never --/bin/sh -c "while sleep 0.01; do wget -q -O- http://www.myapppp.tk; done"
+  709  kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://www.myapppp.tk; done"
+  710  kubectl run -i --tty load-generator-1 --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://www.myapppp.tk; done"
+  711  exit
+  712  kubectl run -i --tty load-generator-2 --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://www.myapppp.tk; done"
+  713  exit
+  714  ls -l
+  715  cd images/
+  716  ls -l
+  717  kubectl get pods
+  718  kubectl get nodes
+  719  ls -l
+  720  vi database-deployment.yaml
+  721  vi backend-deployment.yaml
+  722  vi frontend-deployment.yaml
+  723  kubectl apply -f frontend-deployment.yaml
+  724  kubectl get pods
+  725  kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+  726  kubectl top pods
+  727  kubectl get deployment metrics-server -n kube-system
+  728  kubectl get deployments
+  729  kubectl get metrics-server
+  730  kubectl get deployment metrics-server
+  731  kubectl get deployment metrics-server -n kube-system
+  732  kubectl get pods
+  733  kubectl autoscale deploymentfrontend-deployment-68bf494795-hfpmr --cpu-percent=50 --min=1 --max=10
+  734  kubectl autoscale deployment frontend-deployment-68bf494795-hfpmr --cpu-percent=50 --min=1 --max=10
+  735  clear
+  736  kubectl get pods
+  737  created
+  738  deployment.apps/metrics-server created
+  739  apiservice.apiregistration.k8s.io/v1beta1.metrics.k8s.io c
+  740  ubuntu@ip-10-0-1-34:~/images$ kubectl top pods
+  741  NAME                                   CPU(cores)   MEMORY
+  742  backend-deployment-7c8675f7b9-v2sjl    21m          87Mi
+  743  database-deployment-6cd9c985bb-dbkpc   7m           395Mi
+  744  frontend-deployment-68bf494795-hfpmr   0m           4Mi
+  745  ubuntu@ip-10-0-1-34:~/images$ kubectl get deployment metri
+  746  NAME             READY   UP-TO-DATE   AVAILABLE   AGE
+  747  metrics-server   1/1     1            1           3m19s
+  748  ubuntu@ip-10-0-1-34:~/images$ kubectl get deployments
+  749  NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+  750  backend-deployment    1/1     1            1           22h
+  751  database-deployment   1/1     1            1           22h
+  752  frontend-deployment   1/1     1            1           22h
+  753  ubuntu@ip-10-0-1-34:~/images$ kubectl get metrics-server
+  754  error: the server doesn't have a resource type "metrics-se
+  755  ubuntu@ip-10-0-1-34:~/images$ kubectl get deployment metri
+  756  Error from server (NotFound): deployments.apps "metrics-se
+  757  ubuntu@ip-10-0-1-34:~/images$ kubectl get deployment metri
+  758  NAME             READY   UP-TO-DATE   AVAILABLE   AGE
+  759  metrics-server   1/1     1            1           9m26s
+  760  ubuntu@ip-10-0-1-34:~/images$ kubectl get pods
+  761  NAME                    clear
+  762  clear
+  763  kubectl get pods
+  764  kubectl autoscale deployment frontend-deployment-68bf494795-hfpmr --cpu-percent=50 --min=1 --max=10
+  765  kubectl get deployments
+  766  kubectl get hpa
+  767  kubectl get pods
+  768  kubectl get hpa frontend-deployment --watch
+  769  kubectl get hpa frontend-deployment --watch
+  770  kubectl get hpa
+  771  kubectl edit hpa frontend-deployment
+  772  kubectl get hpa frontend-deployment --watch
+  773  kubectl get hpa
+  774  clear
+  775  kubectl get namespace
+  776  kubectl get node kube-node-lease -o wide
+  777  kubectl get node kube-node-lease
+  778  history
+  779  kubectl get pods
+  780  clear
+  781  kubectl get pods
+  782  kubectl get nodes
+  783  exit
+  784  cd images/
+  785  ls -l
+  786  kubectl get nodes
+  787  kubectl get pods
+  788  kubectl get deployments
+  789  vi backend-deployment.yaml
+  790  mkdir script
+  791  ls -l
+  792  cd script/
+  793  ls -l
+  794  vi runscript.sh
+  795  cd ..
+  796  vi backend-deployment.yaml
+  797  cd script/
+  798  ls -l
+  799  vi runscript.sh
+  800  cd ..
+  801  ls -l
+  802  cd script/
+  803  pwd
+  804  ls -l
+  805  cd ..
+  806  ls -l
+  807  kubectl get deployments
+  808  vi backend-deployment.yaml
+  809  cd script/
+  810  ls
+  811  vi runscript.sh
+  812  ls -ltr
+  813  chmod +x runscript.sh
+  814  ls -ltr
+  815  cd ..
+  816  ls -l
+  817  cd ..
+  818  ls -l
+  819  cd images/
+  820  ls -la
+  821  cd .
+  822  ls -l
+  823  cd /.
+  824  cd ima
+  825  ls -l
+  826  cd /home/ubuntu/
+  827  ls -l
+  828  cd images/
+  829  ls -l
+  830  kubectl version
+  831  pwd
+  832  cd ..
+  833  pwd
+  834  ls -l
+  835  pwd
+  836  cd images/
+  837  ls -l
+  838  kubectl apply -f backend-deployment.yaml
+  839  cd script/
+  840  vi runscript.sh
+  841  cd ..
+  842  vi runscript.sh
+  843  ls -l
+  844  rm script/
+  845  rm -r script/
+  846  ls -l
+  847  clear
+  848  ls -l
+  849  vi runscript.sh
+  850  bash runscript.sh
+  851  vi runscript.sh
+  852  kubectl delete deployment backend-deployment.yaml
+  853  kubectl get deployments
+  854  kubectl delete deployment backend-deployment
+  855  kubectl apply -f backend-deployment.yaml
+  856  clear
+  857  vi runscript.sh
+  858  kubectl get pods
+  859  bash runscript.sh
+  860  kubectl get pods
+  861  ls -l
+  862  chmod +x runscript.sh
+  863  ls -l
+  864  sudo systemctl get pods
+  865  systemctl get pods
+  866  sudo kubectl get pods
+  867  kubectl get pods
+  868  vi runscript.sh
+  869  sh runscript.sh
+  870  kubectl get pods
+  871  vi runscript.sh
+  872  cd ..
+  873  ls -l
+  874  cat kubectl | head 10
+  875  cd /usr/
+  876  ls -l
+  877  cd local/
+  878  ls
+  879  cd bi
+  880  cd bin
+  881  ls -l
+  882  cd ..
+  883  ls -l
+  884  cd bin
+  885  ls -l
+  886  which kubectl
+  887  cd /home/ubuntu/bin
+  888  ls -l
+  889  ~/.kube/config
+  890  sudo ~/.kube/config
+  891  cd
+  892  ~/.kube/config
+  893  sudo su
+  894  ls -a ~/.kube
+  895  cd config
+  896  ls -la ~/.kube
+  897  ls -l
+  898  cd images/
+  899  ls -l
+  900  vi runscript.sh
+  901  sh /home/ubuntu/images/runscript.sh
+  902  vi runscript.sh
+  903  which kubectl
+  904  vi runscript.sh
+  905  cd /usr/local/bin/
+  906  ls
+  907  ls -lrt
+  908  cd
+  909  ls -lrt
+  910  mv kubectl /usr/local/bin/
+  911  sudo mv kubectl /usr/local/bin/
+  912  ls -lrt
+  913  cd images/
+  914  ls -lrt
+  915  mv runscript.sh /usr/local/bin/
+  916  sudo mv runscript.sh /usr/local/bin/
+  917  ls -lrt
+  918  cd /usr/local/bin/
+  919  ls -lrt
+  920  sudo chown root. kubectl runscript.sh
+  921  ls -lrt
+  922  sudo chmod 755 runscript.sh
+  923  ls -lrt
+  924  sudo chmod 755 kubectl
+  925  ls -lrt
+  926  sudo chown root. eksctl
+  927  ls -lrt
+  928  vim runscript.sh
+  929  sudo vim runscript.sh
+  930  sudo useradd jenkins
+  931  visudo
+  932  sudo visudo
+  933  ls -lrt
+  934  sudo vim runscript.sh
+  935  pwd
+  936  cd
+  937  cd images/
+  938  ls -l
+  939  kubectl get pods
+  940  ls -lrt
+  941  kubectl get pods
+  942  cd /usr/local/bin
+  943  ls -l
+  944  vi runscript.sh
+  945  kubectl get pods
+  946  kubectl get nodes
+  947  ls -l
+  948  cd images/
+  949  ls -l
+  950  kubectl get nods
+  951  kubectl get nodes
+  952  kubectl get pods
+  953  clear
+  954  kubectl get pods
+  955  cd usr/local/bin
+  956  cd /usr/local/bin
+  957  ls -l
+  958  cd .
+  959  cd ..
+  960  cd
+  961  cd images/
+  962  vi ba
+  963  ls -l
+  964  vi backend-deployment.yaml
+  965  cd /usr/local/bin
+  966  ls -l
+  967  vi runscript.sh
+  968  kubectl get pods
+  969  ls -l
+  970  cd images/
+  971  ls
+  972  ls -l
+  973  rm ba
+  974  ls -l
+  975  clear
+  976  cd ..
+  977  mkdir rbac
+  978  ls
+  979  cd rbac/
+  980  ls -l
+  981  mkdir role
+  982  ls -
+  983  ls -l
+  984  cd role/
+  985  ls -l
+  986  vi role.yaml
+  987  kubectl apply -f role.yaml
+  988  kubectl get roles
+  989  vi rolebinding.yaml
+  990  kubect apply -f rolebinding.yaml
+  991  kubectl apply -f rolebinding.yaml
+  992  kubectl get rolebinding
+  993  kubectl auth can-i get pod --as user1
+  994  kubectl auth can-i create pod --as user1
+  995  kubectl auth can-i delete pod --as user1
+  996  kubectl auth can-i list pod --as user1
+  997  cd ..
+  998  ls -l
+  999  history
+ 1000  ls -l
+ 1001  cd role/
+ 1002  ls -l
+ 1003  cd ..
+ 1004  ls -l
+ 1005  mkdir clusterrole
+ 1006  cd clusterrole/
+ 1007  vi clusterrole.yaml
+ 1008  vi clusterrole.yaml
+ 1009  kubectl apply -f clusterrole.yaml
+ 1010  vi rolebinding.yaml
+ 1011  kubectl apply -f rolebinding.yaml
+ 1012  kubectl get namespace
+ 1013  vi rolebinding.yaml
+ 1014  kubectl apply -f rolebinding.yaml
+ 1015  kubectl get rolebinging.yaml
+ 1016  kubectl get rolebinding.yaml
+ 1017  kubectl get rolebinding.yaml
+ 1018  kubectl get rolebindings
+ 1019  vi clusterrole.yaml
+ 1020  vi rolebinding.yaml
+ 1021  kubectl apply -f rolebinding.yaml
+ 1022  kubectl get rolebinding
+ 1023  vi clusterrolebinding.yaml
+ 1024  kubectl auth can-i get secret --as developer50 -n default
+ 1025  kubectl get rolebindings
+ 1026  vi clusterrolebinding.yaml
+ 1027  clear
+ 1028  exit
+ 1029  ls
+ 1030  cd rbac/
+ 1031  ls -l
+ 1032  cd role
+ 1033  ls -l
+ 1034  cat role.yaml
+ 1035  cat rolebinding.yaml
+ 1036  cd ..
+ 1037  ls -l
+ 1038  cd clusterrole/
+ 1039  ls -l
+ 1040  cat clusterrole.yaml
+ 1041  cat rolebinding.yaml
+ 1042  kubectl auth can-i get secret --as developer51
+ 1043  kubectl auth can-i get secret --as developer52
+ 1044  ls -l
+ 1045  cat clusterrole
+ 1046  vi clusterrolebinding.yaml
+ 1047  kubectl apply -f clusterrolebinding.yaml
+ 1048  kubectl get clusterrolebindings
+ 1049  kubectl auth can-i get secret --as developer100 -A
+ 1050  kubectl auth can-i create secret --as developer100 -A
+ 1051  clear
+ 1052  exit
+ 1053  ls
+ 1054  cd rbac/
+ 1055  ls -l
+ 1056  cd role/
+ 1057  ls -l
+ 1058  vi role.yaml
+ 1059  vi rolebinding.yaml
+ 1060  vi role.yaml
+ 1061  vi rolebinding.yaml
+ 1062  history
+ 1063  cd ..
+ 1064  ls -l
+ 1065  cd clusterrole/
+ 1066  ls -l
+ 1067  vi clusterrole.yaml
+ 1068  vi clusterrolebinding.yaml
+ 1069  vi rolebinding.yaml
+ 1070  rm rolebinding.yaml
+ 1071  ls -l
+ 1072  vi clusterrolebinding.yaml
+ 1073  vi clusterrole
+ 1074  ls -l
+ 1075  vi clusterrole.yaml
+ 1076  rm clusterrolebinding.yaml
+ 1077  ls -l
+ 1078  vi clusterrolebinding.yaml
+ 1079  kubectl apply -f clusterrolebinding.yaml
+ 1080  exit
+ 1081  ls -l
+ 1082  cd rbac/
+ 1083  ls -l
+ 1084  cd role
+ 1085  ls -l
+ 1086  vi role.yaml
+ 1087  clear
+ 1088  kubect get nodes
+ 1089  ls -l
+ 1090  cd images/
+ 1091  ls -l
+ 1092  kubectl get nodes
+ 1093  kubectl get pods
+ 1094  kubectl get nodes
+ 1095  cd ..
+ 1096  mkdir task
+ 1097  cd task/
+ 1098  vi role.yaml
+ 1099  kubectl apply -f role.yaml
+ 1100  kubectl get role
+ 1101  vi rolebinding.yaml
+ 1102  kubectl apply -f rolebinding.yaml
+ 1103  kubectl get rolebindings
+ 1104  kubectl auth can-i get pod --as vivek
+ 1105  kubectl auth can-i watch pod --as vivek
+ 1106  kubectl get namespaces
+ 1107  kubectl auth can-i get pod --as vivek -n kube-public
+ 1108  kubectl auth can-i get pod --as vivek -n kube-system
+ 1109  kubectl auth can-i get namespace --as vivek -n kube-system
+ 1110  kubectl auth can-i get namespace --as vivek
+ 1111  kubectl auth can-i list  namespace --as vivek
+ 1112  exit
+ 1113  history
+
